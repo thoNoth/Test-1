@@ -15,7 +15,17 @@ void printLines(const std::vector<std::string>& lines) {
 
 // Функция № 3: Записывает строки из вектора в файл
 void writeToFile(const std::string& filename, const std::vector<std::string>& lines) {
-    // Пустая функция
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error: " << filename << std::endl;
+        return;
+    }
+
+    for (const auto& line : lines) {
+        file << line << std::endl;
+    }
+
+    file.close();
 }
 
 int main() {
