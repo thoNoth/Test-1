@@ -10,7 +10,9 @@ void readFromFile(const std::string& filename, std::vector<std::string>& lines) 
 
 // Функция № 2: Выводит строки из вектора на экран
 void printLines(const std::vector<std::string>& lines) {
-    // Пустая функция
+    for (const auto& line : lines) {
+        std::cout << line << std::endl;
+    }
 }
 
 // Функция № 3: Записывает строки из вектора в файл
